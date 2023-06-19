@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon</title>
+    <%("./imports.ejs") %>
+</head>
+<body>
+    
+    <div class="top">
+        <h1>Pokemon Manager</h1>
+        <h4><a href="/pokemon"><button class="home">Home</button></a></h4>
+    </div>
+
+    <div class="bottom">
+        <h2>EDIT: <%= pokeProfile.name %></h2>
+
+        <img src="<%= pokeProfile.img %>" alt="Pokemon Image">
+
+        <form class="manager" action="/pokemon/<%= id %>?_method=PUT" method="post">
+            <input type="text" name="name" placeholder="pokemon name" value="<%= pokeProfile.name %>" />
+            <input class="edit_submit" type="submit" value="Edit <%= pokeProfile.name %>" />
+        </form>
+    </div>
+
+</body>
+</html>

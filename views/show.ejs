@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon</title>
+    <%("./imports.ejs") %>
+</head>
+<body>
+
+    <div class="top">
+        <h1>Pokemon Profile</h1>
+        <h4><a href="/pokemon"><button class="home">Home</button></a></h4>
+    </div>
+
+    <div class="bottom">
+        <div class="img_container">
+            <h2 class="name"><%= pokeProfile.name %></h2>
+            <h3 class="id">ID: #<%= pokeProfile.id %></h3>
+            <img class="show_img" src="<%= pokeProfile.img %>" alt="Pokemon Image">
+            <div class="change">
+                <a href="/pokemon/<%= id %>/edit"><button class="edit_button">Edit</button></a>
+                <form action="/pokemon/<%= id %>?_method=DELETE" method="post">
+                    <input class="delete_button" type="submit" value="Delete"/>    
+                </form>
+            </div>
+        </div>
+    
+        <div class="info">
+            <div class="type">
+                <h4>Type</h4> 
+                    <ul class="data_list">
+                        <li class="data"><%= pokeProfile.type %></li>
+                    </ul>
+            </div>
+
+            <div class="stats">
+                <h4>Stats</h4>
+                    <ul class="data_list">
+                        <li class="data">HP: <%= pokeProfile.stats.hp %></li>
+                        <li class="data">Attack: <%= pokeProfile.stats.attack %></li>
+                        <li class="data">Defense: <%= pokeProfile.stats.defense %></li>
+                        <li class="data">SP Attack: <%= pokeProfile.stats.spattack %></li>
+                        <li class="data">SP Defense: <%= pokeProfile.stats.spdefense %></li>
+                        <li class="data">Speed: <%= pokeProfile.stats.speed %></li>
+                    </ul>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+</html>
