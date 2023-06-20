@@ -5,50 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokemon</title>
-    <%("./imports.ejs") %>
 </head>
-<body>
-
-    <div class="top">
-        <h1>Pokemon Profile</h1>
-        <h4><a href="/pokemon"><button class="home">Home</button></a></h4>
-    </div>
-
-    <div class="bottom">
-        <div class="img_container">
-            <h2 class="name"><%= pokeProfile.name %></h2>
-            <h3 class="id">ID: #<%= pokeProfile.id %></h3>
-            <img class="show_img" src="<%= pokeProfile.img %>" alt="Pokemon Image">
-            <div class="change">
-                <a href="/pokemon/<%= id %>/edit"><button class="edit_button">Edit</button></a>
-                <form action="/pokemon/<%= id %>?_method=DELETE" method="post">
-                    <input class="delete_button" type="submit" value="Delete"/>    
-                </form>
-            </div>
-        </div>
-    
-        <div class="info">
-            <div class="type">
-                <h4>Type</h4> 
-                    <ul class="data_list">
-                        <li class="data"><%= pokeProfile.type %></li>
-                    </ul>
-            </div>
-
-            <div class="stats">
-                <h4>Stats</h4>
-                    <ul class="data_list">
-                        <li class="data">HP: <%= pokeProfile.stats.hp %></li>
-                        <li class="data">Attack: <%= pokeProfile.stats.attack %></li>
-                        <li class="data">Defense: <%= pokeProfile.stats.defense %></li>
-                        <li class="data">SP Attack: <%= pokeProfile.stats.spattack %></li>
-                        <li class="data">SP Defense: <%= pokeProfile.stats.spdefense %></li>
-                        <li class="data">Speed: <%= pokeProfile.stats.speed %></li>
-                    </ul>
-            </div>
-        </div>
-    </div>
-
+√<body>
+    <h1><%= pokemon.name %></h1>
+    <img src=" <%= pokemon.img %>" alt="image">
+    <ul>
+        <li>
+            <h2>Type:<br> <%= pokemon.type %></h2></div><br><br>
+            <form action="/pokemon/<%= id %>?_method=DELETE" method="post">
+                <input class="delete_button" type="submit" value="Delete"/> 
+        </li>
+        <li>
+            <h2>Description</h2>
+            <h4>HP: <%= pokemon.stats.hp %></h4>
+            <h4>Attack <%= pokemon.stats.attack %></h4>
+            <h4>Defense: <%= pokemon.stats.defense %></h4>
+            <h4>spAttack: <%= pokemon.stats.spattack %></h4>
+            <h4>spDefense <%= pokemon.stats.spdefense %></h4>
+            <h4>Speed: <%= pokemon.stats.speed %></h4>
+        </li>
+        
+</ul>
+    <a href="/pokemon"><button>Main Page</button></a>
+    <a href="/pokemon/<%= pokemon._id %>/edit"><button>EDIT</button></a>
+    <form action="/pokemon/<%= pokemon._id%>?_method=delete" method="post">
+        <input type="submit" value="DELETE">
+    </form>
     
 </body>
 </html>

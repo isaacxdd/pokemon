@@ -5,25 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokemon</title>
-    <%("./imports.ejs") %>
 </head>
 <body>
-    
-    <div class="top">
-        <h1>Pokemon Manager</h1>
-        <h4><a href="/pokemon"><button class="home">Home</button></a></h4>
-    </div>
-
-    <div class="bottom">
-        <h2>EDIT: <%= pokeProfile.name %></h2>
-
-        <img src="<%= pokeProfile.img %>" alt="Pokemon Image">
-
-        <form class="manager" action="/pokemon/<%= id %>?_method=PUT" method="post">
-            <input type="text" name="name" placeholder="pokemon name" value="<%= pokeProfile.name %>" />
-            <input class="edit_submit" type="submit" value="Edit <%= pokeProfile.name %>" />
-        </form>
-    </div>
-
+    <h1>Edit Pokemon</h1>
+    <form action="/pokemon/<%= pokemon._id %>?_method=put" method="post">
+        <input type="text" name="name" placeholder="Name of Pokemon" value="<%= pokemon.name %>">
+        <input type="text" name="type" placeholder="Type of Pokemon" value="<%= pokemon.type %>" >
+        <input type="number" name="hp" placeholder="hp" value="<%= pokemon.stats.hp %>" />
+        <input type="number" name="attack" placeholder="Attack" value="<%= pokemon.stats.attack %>" />
+        <input type="number" name="defense" placeholder="Defense" value="<%= pokemon.stats.defense %>" />
+        <input type="number" name="spattack" placeholder="spAttack" value="<%= pokemon.stats.spattack %>" />
+        <input type="number" name="spdefense" placeholder="spDefense" value="<%= pokemon.stats.spdefense %>" />
+        <input type="number" name="speed" placeholder="Speed" value="<%= pokemon.stats.speed %>" />
+        <input type="submit" value="Add Pokemon" />
+    </form>
+    <a href="/pokemon"><button>Main Page</button></a>
 </body>
 </html>

@@ -8,7 +8,6 @@ async function seed() {
  const createdPokemons = await Pokemon.create(Pokemons)
  console.log(createdPokemons.length)
  console.log(createdPokemons[0])
-
 }
 
 // run the seed function when the database connect

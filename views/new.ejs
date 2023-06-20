@@ -5,23 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokemon</title>
-    <%("./imports.ejs") %>
 </head>
 <body>
-    
-    <div class="top">
-        <h1>Pokemon Manager</h1>
-        <h4><a href="/pokemon"><button class="home">Home</button></a></h4>
-    </div>
-
-    <div class="bottom">
-        <h2>Create a Pokemon</h2>
-        <form class="manager" class="new_form" action="/pokemon" method="post">
-            <input type="text" name="name" placeholder="Pokemon name"/>
-            <input class="create" type="submit" value="Create Pokemon" />
-        </form>
-
-    </div>
-
+    <h1>Create a New Pokemon</h1>
+    <form action="/pokemon" method="post">
+        <input type="text" name="name" placeholder="Name of Pokemon">
+        <input type="text" name="type" placeholder="Type of Pokemon">
+        <input type="number" name="hp" placeholder="hp"/>
+        <input type="number" name="attack" placeholder="Attack" />
+        <input type="number" name="defense" placeholder="Defense" />
+        <input type="number" name="spattack" placeholder="spAttack" />
+        <input type="number" name="spdefense" placeholder="spDefense" />
+        <input type="number" name="speed" placeholder="Speed" />
+        <input type="submit" value="Add Pokemon" />
+    </form>
+    <a href="/pokemon"><button>Main Page</button></a>
 </body>
 </html>

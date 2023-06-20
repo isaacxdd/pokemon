@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokedex</title>
-    <%("./imports.ejs") %>
 </head>
 <body>
 
@@ -17,7 +16,7 @@
     <div class="bottom">
         <ul class="img_grid">
             <% for (let i=0; i<pokemon.length; i++) { %>
-                <li>
+                <li class="index_list">
                     <a href="/pokemon/<%= i %>"><img class="index_img" src="<%= pokemon[i].img %>" alt="Pokemon Image"/></a>
                 </li>
             <% } %>
